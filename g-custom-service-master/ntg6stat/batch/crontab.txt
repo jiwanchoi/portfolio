@@ -1,0 +1,1 @@
+0 1 * * * /postgres/10/bin/gcustom_batch.sh >> /postgres/10/log/gcustom_batch.log 2>&1

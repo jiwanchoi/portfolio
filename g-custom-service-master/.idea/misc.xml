@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/auth/pom.xml" />
+        <option value="$PROJECT_DIR$/nds/pom.xml" />
+        <option value="$PROJECT_DIR$/ntg6rp/pom.xml" />
+        <option value="$PROJECT_DIR$/ntg6stat/pom.xml" />
+        <option value="$PROJECT_DIR$/ivi_configserver/pom.xml" />
+        <option value="$PROJECT_DIR$/zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka_server/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/pom.xml" />
+        <option value="$PROJECT_DIR$/openlr/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/zipkin/benchmarks/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-collector/activemq/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-collector/core/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-collector/kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-collector/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-collector/rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-collector/scribe/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-junit/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-lens/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-server/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-storage/cassandra-v1/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-storage/cassandra/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-storage/elasticsearch/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-storage/mysql-v1/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-storage/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin-tests/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin/zipkin/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

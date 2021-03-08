@@ -1,0 +1,39 @@
+{
+  "status": {
+    "angle": 180,
+    "speed": 100,
+    "accuracy": 100
+  },
+  "constraints": {
+    "highway": false,
+    "ferry": false,
+    "tunnel": false,
+    "unpaved": false
+  },
+  "avoid_area": [
+    {
+      "vertices": [
+        {
+          "x": 126.917802,
+          "y": 37.496429
+        },
+        {
+          "x": 126.917802,
+          "y": 37.496429
+        },
+        {
+          "x": 126.917802,
+          "y": 37.496429
+        },
+        {
+          "x": 126.917802,
+          "y": 37.496429
+        }
+      ]
+    }
+  ],
+  "route_types": [
+    "scenic"
+  ]
+}
+

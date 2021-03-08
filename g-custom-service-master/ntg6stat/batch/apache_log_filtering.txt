@@ -1,0 +1,24 @@
+ grep -i ".163 "  ./request_api.ktivi.kt.com_443_20201102.log | sed  's/%2C/,/g' | awk '{
+ split($7,rq1,"?");
+ split(rq1[2], rq2, "&");
+ split(rq2[1], st, "=");
+ split(st[2], st_c, ",");
+ split(rq2[2], dt, "=");
+ split(dt[2], dt_c, ",");
+
+ print $1" "$2 "," $3 "," st_c[1] "," st_c[2] "," dt_c[1] "," dt_c[2] "," $11 "," $13
+ }'
+
+
+
+# 출발지, 목적지 경위도 좌표와 응답 상태코드 및 응답 시간을 필터링함.
+sudo egrep -i ".163 | .135 "  /ap_log/ssl/request_api.ktivi.kt.com_443_20201102.log | sed  's/%2C/,/g' | awk '{
+  split($7,rq1,"?");
+  split(rq1[2], rq2, "&");
+  split(rq2[1], st, "=");
+  split(st[2], st_c, ",");
+  split(rq2[2], dt, "=");
+  split(dt[2], dt_c, ",");
+
+  print $1" "$2 "," $3 "," st_c[1] "," st_c[2] "," dt_c[1] "," dt_c[2] "," $11 "," $13
+  }' > ~gcstm/20201102.ap.dmp

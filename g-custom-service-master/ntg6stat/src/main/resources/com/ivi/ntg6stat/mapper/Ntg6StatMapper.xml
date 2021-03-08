@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.ivi.ntg6stat.mapper.Ntg6StatMapper">
+
+    <select id="getMonthStatics" parameterType="map" resultType="map">
+        SELECT YYYYMM AS        DNO
+             , GCSVC
+             , GCRESAVG
+             , round(GCRESMAX)  GCRESMAX
+             , round(GCRESMIN)  GCRESMIN
+             , round(GCTCNT)    GCTCNT
+             , round(GCTSCNT)   GCTSCNT
+             , round(GCTFCNT)   GCTFCNT
+             , GCAVGTRY
+             , round(GCCNTTRY)  GCCNTTRY
+             , max_elapsed_time max_elapsed_time
+             , avg_elapsed_time avg_elapsed_time
+             , min_elapsed_time min_elapsed_time
+        FROM T_RP_MONTH_STAT
+        WHERE YYYYMM BETWEEN #{sdate} AND #{edate}
+          AND GCSVC = 'NTG6'
+    </select>
+
+    <select id="getDayStatics" parameterType="map" resultType="map">
+        SELECT YYYYMMDD AS      DNO
+             , GCSVC
+             , GCRESAVG
+             , round(GCRESMAX)  GCRESMAX
+             , round(GCRESMIN)  GCRESMIN
+             , round(GCTCNT)    GCTCNT
+             , round(GCTSCNT)   GCTSCNT
+             , round(GCTFCNT)   GCTFCNT
+             , GCAVGTRY
+             , round(GCCNTTRY)  GCCNTTRY
+             , max_elapsed_time max_elapsed_time
+             , avg_elapsed_time avg_elapsed_time
+             , min_elapsed_time min_elapsed_time
+        FROM T_RP_DAY_STAT
+        WHERE YYYYMMDD BETWEEN #{sdate} AND #{edate}
+          AND GCSVC = 'NTG6'
+          AND to_date(YYYYMMDD, 'YYYYMMDD') != current_date
+    </select>
+
+    <select id="getHourStatics" parameterType="map" resultType="map">
+        SELECT substring(YYYYMMDDHHMM, 1, 10) AS DNO
+             , GCSVC
+             , avg(GCRESAVG)                     GCRESAVG
+             , max(GCRESMAX)                     GCRESMAX
+             , min(GCRESMIN)                     GCRESMIN
+             , sum(GCTCNT)                       GCTCNT
+             , sum(GCTSCNT)                      GCTSCNT
+             , sum(GCTFCNT)                      GCTFCNT
+             , avg(GCAVGTRY)                     GCAVGTRY
+             , sum(GCCNTTRY)                     GCCNTTRY
+             , max(max_elapsed_time)::bigint     max_elapsed_time
+             , avg(avg_elapsed_time)::bigint     avg_elapsed_time
+             , min(min_elapsed_time)::bigint     min_elapsed_time
+        FROM MV_RP_TIME_STAT
+        WHERE YYYYMMDDHHMM BETWEEN #{sdate} AND #{edate}
+          AND GCSVC = 'NTG6'
+          AND to_date(substring(YYYYMMDDHHMM, 1, 8), 'YYYYMMDD') != current_date
+        GROUP BY substring(YYYYMMDDHHMM, 1, 10), GCSVC
+        ORDER BY substring(YYYYMMDDHHMM, 1, 10)
+    </select>
+
+    <!-- 당일의 분단위 통계 검색 -->
+    <select id="getMinStatics" parameterType="map" resultType="map">
+        SELECT YYYYMMDDHHMM AS DNO
+             , GCSVC
+             , GCRESAVG
+             , round(GCRESMAX) GCRESMAX
+             , round(GCRESMIN) GCRESMIN
+             , round(GCTCNT)   GCTCNT
+             , round(GCTSCNT)  GCTSCNT
+             , round(GCTFCNT)  GCTFCNT
+             , GCAVGTRY
+             , GCCNTTRY
+             , max_elapsed_time::bigint
+             , avg_elapsed_time::bigint
+             , min_elapsed_time::bigint
+        FROM MV_RP_TIME_STAT
+        WHERE YYYYMMDDHHMM BETWEEN #{sdate} AND #{edate}
+          AND GCSVC = 'NTG6'
+--           AND to_date(substring(YYYYMMDDHHMM, 1, 8), 'YYYYMMDD') != current_date
+    </select>
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG" monitorInterval="30">
+    <Properties>
+        <Property name="LOG_FORMAT">%d [%p]  [%c] - %m %n</Property>
+        <Property name="BASE_DIR">logs/</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_FORMAT}"/>
+        </Console>
+        
+        <RollingFile name="File"
+                     fileName="${BASE_DIR}ntg6service.log"
+                     filePattern="${BASE_DIR}ntg6service-%d{yyyyMMdd}.log">
+            <PatternLayout pattern="${LOG_FORMAT}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${BASE_DIR}">
+                    <IfFileName glob="*.log" />
+                    <IfLastModified age="30d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="Console"/>
+<!--            TODO 운영에서 활성화 -->
+            <AppenderRef ref="File" />
+        </Root>
+
+<!--        <Root name="com.ivi.ntg6" level="DEBUG" addtivity="false">-->
+<!--            <AppenderRef ref="Console"/>-->
+<!--&lt;!&ndash;            TODO 운영에서 활성화 &ndash;&gt;-->
+<!--            <AppenderRef ref="File" />-->
+<!--        </Root>-->
+        
+        <logger name="org.springframework" level="warn" additivity="false" >
+			<appender-ref ref="Console" />
+<!--            TODO 운영에서 활성화 -->
+		    <appender-ref ref="File" />
+	    </logger>
+		
+		<logger name="org.apache.http" level="warn" additivity="false" >
+		    <appender-ref ref="Console" />
+<!--            TODO 운영에서 활성화 -->
+		    <appender-ref ref="File" />
+		</logger>
+        
+    </Loggers>
+</Configuration>

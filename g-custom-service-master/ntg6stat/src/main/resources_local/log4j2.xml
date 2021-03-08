@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG" monitorInterval="30">
+    <Properties>
+        <Property name="LOG_FORMAT">%d [%p]  [%c] - %m %n</Property>
+        <Property name="BASE_DIR">logs/</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_FORMAT}"/>
+        </Console>
+        
+        <RollingFile name="File"
+                     fileName="${BASE_DIR}ntg6_stat_service_.log"
+                     filePattern="${BASE_DIR}ntg6_stat_service-%d{yyyyMMdd}.log">
+            <PatternLayout pattern="${LOG_FORMAT}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${BASE_DIR}">
+                    <IfFileName glob="*.log" />
+                    <IfLastModified age="30d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File" />
+        </Root>
+        
+        <logger name="org.springframework" level="warn" additivity="false" >
+			<appender-ref ref="Console" />
+		    <appender-ref ref="File" />
+	    </logger>
+		
+		<logger name="org.apache.http" level="warn" additivity="false" >
+		    <appender-ref ref="Console" />
+		    <appender-ref ref="File" />
+		</logger>
+        
+    </Loggers>
+</Configuration>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="confServer" />
+        <module name="openlr" />
+        <module name="auth" />
+        <module name="ntg6" />
+        <module name="eureka" />
+        <module name="zuul" />
+        <module name="nds" />
+        <module name="ntg6stat" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth" target="1.8" />
+      <module name="benchmarks" target="1.8" />
+      <module name="confServer" target="1.8" />
+      <module name="eureka" target="1.8" />
+      <module name="nds" target="1.8" />
+      <module name="ntg6" target="1.8" />
+      <module name="ntg6stat" target="1.8" />
+      <module name="openlr" target="1.8" />
+      <module name="zipkin" target="1.7" />
+      <module name="zipkin-collector" target="1.8" />
+      <module name="zipkin-collector-activemq" target="1.8" />
+      <module name="zipkin-collector-kafka" target="1.8" />
+      <module name="zipkin-collector-parent" target="1.5" />
+      <module name="zipkin-collector-rabbitmq" target="1.8" />
+      <module name="zipkin-collector-scribe" target="1.8" />
+      <module name="zipkin-junit" target="1.8" />
+      <module name="zipkin-lens" target="1.8" />
+      <module name="zipkin-parent" target="1.8" />
+      <module name="zipkin-server" target="1.8" />
+      <module name="zipkin-storage-cassandra" target="1.8" />
+      <module name="zipkin-storage-cassandra-v1" target="1.8" />
+      <module name="zipkin-storage-elasticsearch" target="1.8" />
+      <module name="zipkin-storage-mysql-v1" target="1.8" />
+      <module name="zipkin-storage-parent" target="1.5" />
+      <module name="zipkin-tests" target="1.8" />
+      <module name="zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth" options="-parameters" />
+      <module name="confServer" options="-parameters" />
+      <module name="eureka" options="-parameters" />
+      <module name="nds" options="-parameters" />
+      <module name="ntg6" options="-parameters" />
+      <module name="ntg6stat" options="-parameters" />
+      <module name="openlr" options="-parameters" />
+      <module name="zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

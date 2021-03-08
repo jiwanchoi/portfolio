@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+        
+<mapper namespace="com.ivi.ntg6.mapper.Ntg6Mapper">
+    
+    	<select id="getString" resultType="string">
+    	
+    		SELECT 1 
+    	
+    	</select>
+    	
+    	<select id="getList" resultType="map">
+    		SELECT 
+		   	  	  GCID
+		  		 ,GC_TID
+		  		 ,GCKEY
+		  		 ,CIP
+		  		 ,GCSVC
+		  		 ,GCREQ
+		  		 ,GCRES
+		  		 ,GCDELAY
+		  		 ,GM_TID
+		  		 ,GMKEY
+		  		 ,GMREQ
+		  		 ,GMRES
+		  		 ,GMDELAY
+		  		 ,GMSTAT
+		  		 ,REQST
+		  		 ,REQDT
+		  		 ,REQWPCNT
+		  		 ,REQAVCNT
+		  		 ,RES_TDIS
+		  		 ,RES_TTOL
+		  		 ,RES_TDUR
+		  		 ,RES_TRDUR
+		  		 ,GCERCODE
+		  		 ,GCTRYCNT
+		  		 ,RES_CNT
+		  		 ,RES_ROUTE_TYPE
+		  FROM RPLOG  	
+    	</select>
+    	
+    	<insert id="putData" parameterType="map">
+    		INSERT INTO RPLOG
+    		(
+    			  MID
+		  		 ,GC_TID
+		  		 ,GCKEY
+		  		 ,CIP
+		  		 ,GCSVC
+		  		 ,GCREQ
+		  		 ,GCRES
+		  		 ,GCDELAY
+		  		 ,GM_TID
+		  		 ,GMKEY
+		  		 ,GMREQ
+		  		 ,GMRES
+		  		 ,GMDELAY
+		  		 ,GMSTAT
+		  		 ,REQST
+		  		 ,REQDT
+		  		 ,REQWPCNT
+		  		 ,REQAVCNT
+		  		 ,RES_TDIS
+		  		 ,RES_TTOL
+		  		 ,RES_TDUR
+		  		 ,RES_TRDUR
+		  		 ,GCERCODE
+		  		 ,GCTRYCNT
+		  		 ,RES_CNT
+		  		 ,RES_ROUTE_TYPE
+	  		 ) 
+    		VALUES 
+    		(
+    			  #{MID}
+		  		 ,#{GC_TID}
+		  		 ,#{GCKEY}
+		  		 ,#{CIP}
+		  		 ,#{GCSVC}
+		  		 ,#{GCREQ}
+		  		 ,#{GCRES}
+		  		 ,#{GCDELAY}
+		  		 ,#{GM_TID}
+		  		 ,#{GMKEY}
+		  		 ,#{GMREQ}
+		  		 ,#{GMRES}
+		  		 ,#{GMDELAY}
+		  		 ,#{GMSTAT}
+		  		 ,#{REQST}
+		  		 ,#{REQDT}
+		  		 ,#{REQWPCNT}
+		  		 ,#{REQAVCNT}
+		  		 ,#{RES_TDIS}
+		  		 ,#{RES_TTOL}
+		  		 ,#{RES_TDUR}
+		  		 ,#{RES_TRDUR}
+		  		 ,#{GCERCODE}
+		  		 ,#{GCTRYCNT}
+		  		 ,#{RES_CNT}
+		  		 ,#{RES_ROUTE_TYPE}
+    		)
+    	</insert>
+    	
+    	<update id="updateData" parameterType="map">
+    		update testa
+    		set val2 = #{val2}
+    		where key = #{key}
+    	</update>
+    	
+    	
+    	
+    	
+    	
+    	<insert id="insertLogData" parameterType="com.ivi.ntg6.model.LogData">
+    		INSERT INTO RPLOG
+    		(
+    			  MID
+		  		 ,GC_TID
+		  		 ,GCKEY
+		  		 ,CIP
+		  		 ,GCSVC
+		  		 ,GCREQ
+		  		 ,GCRES
+		  		 ,GCDELAY
+		  		 ,GM_TID
+		  		 ,GMKEY
+		  		 ,GMREQ
+		  		 ,GMRES
+		  		 ,GMDELAY
+		  		 ,GMSTAT
+		  		 ,REQST
+		  		 ,REQDT
+		  		 ,REQWPCNT
+		  		 ,REQAVCNT
+		  		 ,RES_TDIS
+		  		 ,RES_TTOL
+		  		 ,RES_TDUR
+		  		 ,RES_TRDUR
+		  		 ,GCERCODE
+		  		 ,GCTRYCNT
+		  		 ,RES_CNT
+		  		 ,RES_ROUTE_TYPE
+		  		 ,MAX_ELAPSED_TIME
+		  		 ,AVG_ELAPSED_TIME
+		  		 ,MIN_ELAPSED_TIME
+	  		 ) 
+    		VALUES 
+    		(
+    			  #{MID}
+		  		 ,#{GC_TID}
+		  		 ,#{GCKEY}
+		  		 ,#{CIP}
+		  		 ,#{GCSVC}
+		  		 ,#{GCREQ}
+		  		 ,#{GCRES}
+		  		 ,#{GCDELAY}
+		  		 ,#{GM_TID}
+		  		 ,#{GMKEY}
+		  		 ,#{GMREQ}
+		  		 ,#{GMRES}
+		  		 ,#{GMDELAY}
+		  		 ,#{GMSTAT}
+		  		 ,#{REQST}
+		  		 ,#{REQDT}
+		  		 ,#{REQWPCNT}
+		  		 ,#{REQAVCNT}
+		  		 ,#{RES_TDIS}
+		  		 ,#{RES_TTOL}
+		  		 ,#{RES_TDUR}
+		  		 ,#{RES_TRDUR}
+		  		 ,#{GCERCODE}
+		  		 ,#{GCTRYCNT}
+		  		 ,#{RES_CNT}
+		  		 ,#{RES_ROUTE_TYPE}
+		  		 ,#{maxElapsedTime}
+		  		 ,#{avgElapsedTime}
+		  		 ,#{minElapsedTime}
+    		)
+    	</insert>
+    	
+    	
+    	
+</mapper>

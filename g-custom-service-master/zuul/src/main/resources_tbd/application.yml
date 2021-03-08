@@ -1,0 +1,16 @@
+gcustom_local:
+  domain:
+    url: http://localhost
+  auth:
+    url: localhost:7001
+    
+gcustom:
+  domain:
+#    TODO 운영
+#    url: http://121.140.228.138:7070
+    url: http://localhost:7070
+  auth:
+#    TODO 운영
+#    url: 192.168.0.215:7001
+      url: localhost:7001
+    

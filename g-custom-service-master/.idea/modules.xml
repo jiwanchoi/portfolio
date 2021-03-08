@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/auth/auth.iml" filepath="$PROJECT_DIR$/auth/auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ivi_configserver/confServer.iml" filepath="$PROJECT_DIR$/ivi_configserver/confServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka_server/eureka.iml" filepath="$PROJECT_DIR$/eureka_server/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nds/nds.iml" filepath="$PROJECT_DIR$/nds/nds.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ntg6rp/ntg6.iml" filepath="$PROJECT_DIR$/ntg6rp/ntg6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ntg6stat/ntg6stat.iml" filepath="$PROJECT_DIR$/ntg6stat/ntg6stat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openlr/openlr.iml" filepath="$PROJECT_DIR$/openlr/openlr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
+    </modules>
+  </component>
+</project>
